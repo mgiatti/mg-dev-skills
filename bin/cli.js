@@ -35,7 +35,7 @@ function parseArgs(argv) {
 
 function printHelp() {
   console.log(`
-${BOLD('mg-dev-skills')} — Claude Code skill pack for NestJS/TypeScript projects
+${BOLD('mg-dev-skills')} — Claude Code skill pack for any software project
 
 ${BOLD('USAGE')}
   npx mg-dev-skills <command> [options]
@@ -55,8 +55,8 @@ ${BOLD('OPTIONS')}
 
 ${BOLD('EXAMPLES')}
   npx mg-dev-skills init
-  npx mg-dev-skills init --skills deep-grill,tdd-master
-  npx mg-dev-skills add safe-human-commit
+  npx mg-dev-skills init --skills mg-grill,mg-tdd
+  npx mg-dev-skills add mg-commit
   npx mg-dev-skills list
 `);
 }

@@ -93,14 +93,13 @@ After all tests pass, look for:
 
 ### What Makes a Good Test
 
-```typescript
+```
 // GOOD: Tests observable behavior
-test("user can checkout with valid cart", async () => {
-  const cart = createCart();
-  cart.add(product);
-  const result = await checkout(cart, paymentMethod);
-  expect(result.status).toBe("confirmed");
-});
+test "user can checkout with valid cart":
+  cart = createCart()
+  cart.add(product)
+  result = checkout(cart, paymentMethod)
+  assert result.status == "confirmed"
 ```
 
 Checklist per test:
@@ -112,13 +111,12 @@ Checklist per test:
 
 ### What Makes a Bad Test
 
-```typescript
+```
 // BAD: Tests implementation detail
-test("checkout calls paymentService.process", async () => {
-  const mockPayment = jest.mock(paymentService);
-  await checkout(cart, payment);
-  expect(mockPayment.process).toHaveBeenCalledWith(cart.total);
-});
+test "checkout calls paymentService.process":
+  mock paymentService
+  checkout(cart, payment)
+  assert paymentService.process was called with cart.total
 ```
 
 Red flags:
@@ -134,20 +132,18 @@ Red flags:
 
 Never mock your own code or internal collaborators. Better mockability comes from intentional interface design (dependency injection, SDK-style per-operation functions) — not from mocking everything.
 
-```typescript
+```
 // GOOD: mock at the boundary
-test("createUser makes user retrievable", async () => {
-  const user = await createUser({ name: "Alice" });
-  const retrieved = await getUser(user.id);
-  expect(retrieved.name).toBe("Alice");
-});
+test "createUser makes user retrievable":
+  user = createUser(name: "Alice")
+  retrieved = getUser(user.id)
+  assert retrieved.name == "Alice"
 
 // BAD: bypasses the interface to verify
-test("createUser saves to database", async () => {
-  await createUser({ name: "Alice" });
-  const row = await db.query("SELECT * FROM users WHERE name = ?", ["Alice"]);
-  expect(row).toBeDefined();
-});
+test "createUser saves to database":
+  createUser(name: "Alice")
+  row = db.rawQuery("SELECT * FROM users WHERE name = 'Alice'")
+  assert row exists
 ```
 
 ---

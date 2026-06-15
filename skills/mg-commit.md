@@ -8,7 +8,7 @@ Generates terse, noise-free commit messages in Conventional Commits format.
 
 ## Trigger
 
-`/safe-human-commit [--human] [--scope <scope>] [--breaking]`
+`/mg-safe-human-commit [--human] [--scope <scope>] [--breaking]`
 
 ---
 
