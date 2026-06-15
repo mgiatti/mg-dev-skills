@@ -1,0 +1,39 @@
+{
+  "name": "mg-dev-skills",
+  "version": "1.0.0",
+  "description": "Claude Code skill pack for NestJS/TypeScript projects — install AI dev skills in any project via npx",
+  "main": "lib/installer.js",
+  "bin": {
+    "mg-dev-skills": "bin/cli.js"
+  },
+  "files": [
+    "bin/",
+    "lib/",
+    "skills/",
+    "templates/"
+  ],
+  "scripts": {
+    "test": "node bin/cli.js list"
+  },
+  "keywords": [
+    "claude",
+    "claude-code",
+    "skills",
+    "commands",
+    "nestjs",
+    "typescript",
+    "tdd",
+    "ai",
+    "developer-tools",
+    "conventional-commits"
+  ],
+  "author": "Marcelo Giatti",
+  "license": "MIT",
+  "engines": {
+    "node": ">=18.0.0"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/marcelobuscaratti/mg-dev-skills.git"
+  }
+}
