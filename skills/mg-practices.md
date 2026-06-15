@@ -107,7 +107,7 @@ These checks apply regardless of stack.
 - Is authorization re-checked when accessing a resource by ID (not just at login)?
 - Are tokens and sessions invalidated on logout and credential change?
 
-**Secrets:** flag hardcoded credentials, API keys, or tokens anywhere in code or configuration files that would be committed. Flag logging of sensitive fields (passwords, tokens, PII).
+**Secrets and sensitive data:** flag hardcoded credentials, API keys, tokens, email addresses, usernames, phone numbers, or any PII anywhere in code, configuration files, or metadata files (package.json, composer.json, pyproject.toml, etc.) that would be committed to version control. Flag logging of sensitive fields (passwords, tokens, PII). These leaks persist in git history even after the value is removed from the file — treat any committed secret as permanently compromised and rotate it immediately.
 
 **Least privilege:** flag code that requests broader permissions than it needs (wide DB access, admin tokens for read-only operations, broad filesystem access).
 
