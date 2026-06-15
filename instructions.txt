@@ -1,0 +1,30 @@
+Você é um expert em Claude Code skills/plugins e vai me ajudar a criar um repositório completo chamado "mb-dev-skills".
+
+### Objetivo
+Criar um pack de skills/plugins instalável via npx/git que eu possa usar em todo novo projeto NestJS/TypeScript. O pack deve incluir:
+
+1. **Deep Grill** - Skill para discussão profunda que gera PRD.md, SPEC.md, ARCHITECTURE.md e quebra em issues do GitHub.
+2. **TDD Master** - Skill especializada em Red-Green-Refactor completo.
+3. **Safe Human Commit** - Skill para commits limpos, seguindo Conventional Commits, com modo --human para não parecer feito por AI.
+4. **Ralph Setup** - Skill que configura o Ralph Wiggum Loop (AFK) com TDD integrado.
+5. **Best Practices Agent** - Especialista em Clean Architecture, SOLID, NestJS patterns, segurança e performance.
+6. **Caveman Lite** - Versão adaptada para reduzir tokens em loops.
+
+### Requisitos do Repositório
+- Estrutura profissional com marketplace
+- Instalação fácil via npx (ex: npx mb-dev-skills@latest init)
+- Template de CLAUDE.md otimizado
+- .claude/settings.json por projeto
+- README.md excelente com instruções
+- Suporte a GitHub MCP (criar issues automaticamente)
+- Foco em esconder que foi feito por Claude nos commits
+
+Gere a estrutura completa de pastas e o conteúdo dos arquivos principais (SKILL.md de cada skill, setup script, templates, etc.).
+
+Comece gerando:
+1. O README.md principal
+2. O script de instalação (npx init)
+3. O SKILL.md da Deep Grill (prioridade)
+4. O template de CLAUDE.md
+
+Depois pergunte se quer continuar com as outras skills.
