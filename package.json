@@ -1,7 +1,7 @@
 {
   "name": "mg-dev-skills",
-  "version": "1.0.0",
-  "description": "Claude Code skill pack for NestJS/TypeScript projects — install AI dev skills in any project via npx",
+  "version": "1.1.0",
+  "description": "Claude Code skill pack for any software project — install AI dev skills in any project via npx",
   "main": "lib/installer.js",
   "bin": {
     "mg-dev-skills": "bin/cli.js"
@@ -20,8 +20,6 @@
     "claude-code",
     "skills",
     "commands",
-    "nestjs",
-    "typescript",
     "tdd",
     "ai",
     "developer-tools",
