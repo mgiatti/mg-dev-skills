@@ -1,6 +1,6 @@
 # mg-dev-skills
 
-Claude Code skill pack for NestJS/TypeScript projects. Install a curated set of AI development skills into any project in one command.
+Claude Code skill pack for any software project. Install a curated set of AI development skills into any project in one command.
 
 ```bash
 npx mg-dev-skills init
@@ -12,12 +12,12 @@ npx mg-dev-skills init
 
 | Command | Description |
 |---------|-------------|
-| `/deep-grill` | Deep technical discussion → PRD.md, SPEC.md, ARCHITECTURE.md, GitHub issues |
-| `/tdd-master` | Strict Red-Green-Refactor TDD workflow |
-| `/safe-human-commit` | Conventional Commits with `--human` mode |
-| `/ralph-setup` | AFK autonomous development loop with TDD + GitHub |
-| `/best-practices` | Clean Architecture, SOLID, NestJS, security, performance review |
-| `/caveman-lite` | Token-optimized mode for long autonomous loops |
+| `/mg-grill` | Deep technical discussion → PRD.md, SPEC.md, ARCHITECTURE.md, GitHub issues |
+| `/mg-tdd` | Strict Red-Green-Refactor TDD workflow |
+| `/mg-commit` | Conventional Commits with `--human` mode |
+| `/mg-ralph` | AFK autonomous development loop with TDD + GitHub |
+| `/mg-practices` | Architecture, SOLID, security, and performance review |
+| `/mg-caveman` | Token-optimized mode for long autonomous loops |
 
 ---
 
@@ -35,13 +35,13 @@ This copies all skills to `.claude/commands/`, adds a `CLAUDE.md` template, and 
 ### Install specific skills only
 
 ```bash
-npx mg-dev-skills init --skills deep-grill,tdd-master,safe-human-commit
+npx mg-dev-skills init --skills mg-grill,mg-tdd,mg-commit
 ```
 
 ### Add a single skill
 
 ```bash
-npx mg-dev-skills add best-practices
+npx mg-dev-skills add mg-practices
 ```
 
 ### List available skills
@@ -64,9 +64,9 @@ npx mg-dev-skills list
 
 ## Skills in Detail
 
-### `/deep-grill`
+### `/mg-grill`
 
-Runs a structured discovery session on a feature or problem. Works through four question groups (problem, scope, technical reality, dependencies), then generates:
+Runs a structured discovery session on a feature or problem. Works through domain terminology, edge cases, and technical reality, then generates:
 
 - **PRD.md** — problem statement, user stories, success metrics
 - **SPEC.md** — API contract, data model, sequence diagram, rollout plan
@@ -75,12 +75,12 @@ Runs a structured discovery session on a feature or problem. Works through four 
 Then optionally breaks work into GitHub issues with estimates, labels, and dependency ordering.
 
 ```
-/deep-grill user authentication with SSO
+/mg-grill user authentication with SSO
 ```
 
 ---
 
-### `/tdd-master`
+### `/mg-tdd`
 
 Enforces the three laws of TDD throughout the session:
 
@@ -88,15 +88,15 @@ Enforces the three laws of TDD throughout the session:
 2. No more test code than needed to fail
 3. No more production code than needed to pass
 
-Reports each cycle: `[RED] → [GREEN] → [REFACTOR]`. Includes NestJS/Jest boilerplate and naming conventions.
+Reports each cycle: `[RED] → [GREEN] → [REFACTOR]`. Language and framework agnostic — uses pseudocode examples.
 
 ```
-/tdd-master UserService.getUser()
+/mg-tdd UserService.getUser()
 ```
 
 ---
 
-### `/safe-human-commit`
+### `/mg-commit`
 
 Analyzes staged changes and generates a Conventional Commits message. With `--human`:
 
@@ -105,13 +105,13 @@ Analyzes staged changes and generates a Conventional Commits message. With `--hu
 - Confirms before committing
 
 ```
-/safe-human-commit --human
-/safe-human-commit --breaking --scope auth
+/mg-commit --human
+/mg-commit --breaking --scope auth
 ```
 
 ---
 
-### `/ralph-setup`
+### `/mg-ralph`
 
 Configures the Ralph Wiggum Loop — an autonomous AFK development cycle that:
 
@@ -122,40 +122,42 @@ Configures the Ralph Wiggum Loop — an autonomous AFK development cycle that:
 5. Stops cleanly if blocked (never fakes progress)
 
 ```
-/ralph-setup
-/ralph-setup --dry-run
+/mg-ralph
+/mg-ralph --dry-run
 ```
 
 ---
 
-### `/best-practices`
+### `/mg-practices`
 
 Reviews code across five dimensions with `[CRITICAL]` / `[HIGH]` / `[MEDIUM]` / `[LOW]` severity:
 
-1. Clean Architecture boundaries
-2. SOLID principles
-3. NestJS patterns (modules, guards, pipes, config)
-4. Security (validation, auth, injection, secrets, rate limiting)
-5. Performance (N+1, missing indexes, queue candidates)
+1. Architectural boundaries (Clean Architecture / Hexagonal)
+2. Design principles (SOLID, cohesion, coupling)
+3. Development lifecycle (testability, observability, error handling, config)
+4. Security (input validation, auth, injection, secrets, least privilege)
+5. Performance and reliability (algorithmic cost, I/O patterns, failure modes)
+
+Language and framework agnostic.
 
 ```
-/best-practices src/orders/
-/best-practices                  # reviews files changed since last commit
+/mg-practices src/orders/
+/mg-practices                  # reviews files changed since last commit
 ```
 
 ---
 
-### `/caveman-lite`
+### `/mg-caveman`
 
 Activates token-saving mode for the session:
 
 - No prose — code blocks only
 - No summaries of what was done
 - No alternatives considered
-- Deactivate with `/caveman-off`
+- Deactivate with `/mg-caveman-off`
 
 ```
-/caveman-lite
+/mg-caveman
 ```
 
 ---
@@ -168,12 +170,12 @@ your-project/
 ├── .claude/
 │   ├── settings.json                ← pre-approved bash commands
 │   └── commands/
-│       ├── deep-grill.md
-│       ├── tdd-master.md
-│       ├── safe-human-commit.md
-│       ├── ralph-setup.md
-│       ├── best-practices.md
-│       └── caveman-lite.md
+│       ├── mg-grill.md
+│       ├── mg-tdd.md
+│       ├── mg-commit.md
+│       ├── mg-ralph.md
+│       ├── mg-practices.md
+│       └── mg-caveman.md
 ```
 
 Skills in `.claude/commands/` are automatically available as slash commands in Claude Code.
@@ -184,7 +186,7 @@ Skills in `.claude/commands/` are automatically available as slash commands in C
 
 - Node.js 18+
 - Claude Code CLI
-- `gh` CLI (for `/ralph-setup` and GitHub issue features)
+- `gh` CLI (for `/mg-ralph` and GitHub issue features)
 
 ---
 

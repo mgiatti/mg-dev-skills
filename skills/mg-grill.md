@@ -10,7 +10,7 @@ If a question can be answered by exploring the codebase, explore the codebase in
 
 ## Trigger
 
-`/deep-grill [topic]` — if no topic provided, ask: "What are we grilling today?"
+`/mg-grill [topic]` — if no topic provided, ask: "What are we grilling today?"
 
 ---
 

@@ -4,9 +4,9 @@
 
 Reduce token usage ~75% while keeping full technical accuracy.
 
-**Activation:** `/caveman-lite` or `/caveman-lite ultra`
+**Activation:** `/mg-caveman-lite` or `/mg-caveman-lite ultra`
 
-**Deactivation:** `/caveman-off` or "stop caveman" or "normal mode"
+**Deactivation:** `/mg-caveman-off` or "stop caveman" or "normal mode"
 
 ---
 

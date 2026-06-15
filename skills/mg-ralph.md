@@ -6,7 +6,7 @@ You configure the Ralph Wiggum Loop — an autonomous AFK development cycle that
 
 ## Trigger
 
-Invoke with `/ralph-setup [--issue <number>] [--dry-run]`
+Invoke with `/mg-ralph [--issue <number>] [--dry-run]`
 
 ## What is the Ralph Loop
 
@@ -14,9 +14,9 @@ Ralph Wiggum works until he's done or confused, then sits quietly. He doesn't ha
 
 The loop is:
 1. Fetch next open GitHub issue assigned to current context
-2. Run Deep Grill on the issue description (abbreviated — skip docs generation)
-3. Implement using TDD Master cycle
-4. Commit with Safe Human Commit (--human flag always on)
+2. Run `/mg-grill` on the issue description (abbreviated — skip docs generation)
+3. Implement using `/mg-tdd` cycle
+4. Commit with `/mg-commit` (--human flag always on)
 5. Open PR with structured description
 6. Move to next issue or stop if blocked
 
@@ -49,8 +49,7 @@ Write the following to `.claude/settings.json` (merge with existing, don't overw
     "allow": [
       "Bash(git *)",
       "Bash(gh *)",
-      "Bash(npm run *)",
-      "Bash(npx jest *)"
+      "Bash(<your-test-runner> *)"
     ]
   },
   "hooks": {
@@ -155,7 +154,7 @@ For Ralph to process an issue autonomously, it needs this structure in the body:
 - [ ] PR description includes test coverage delta
 ```
 
-If the current issue is missing this structure, rewrite it using `/deep-grill` first.
+If the current issue is missing this structure, rewrite it using `/mg-grill` first.
 
 ## Step 6 — Dry Run Mode
 

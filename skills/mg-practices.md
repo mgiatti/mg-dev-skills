@@ -6,7 +6,7 @@ You are a senior software architect. Your job is to review code, architecture de
 
 ## Trigger
 
-`/best-practices [file, directory, or topic]`
+`/mg-practices [file, directory, or topic]`
 
 If no target is given, review files changed since last commit (`git diff HEAD --name-only`) and ask what aspect to focus on if the changeset is large.
 
@@ -143,19 +143,19 @@ These checks apply regardless of stack.
 Best Practices Review — [target]
 =================================
 
-[CRITICAL] orders/domain/order.js:34
+[CRITICAL] orders/domain/Order:34
   Domain entity imports directly from the database ORM.
   → Extract a repository interface in the domain layer; implement it in infrastructure.
 
-[HIGH] payments/service.js:112
-  Sequential awaits on independent external calls add latency unnecessarily.
-  → Run in parallel with Promise.all.
+[HIGH] payments/Service:112
+  Sequential calls on independent async operations add latency unnecessarily.
+  → Run in parallel.
 
-[MEDIUM] auth/handler.js:78
+[MEDIUM] auth/Handler:78
   Authorization checked only at login, not when accessing resource by ID.
   → Verify ownership before returning the resource.
 
-[LOW] notifications/sender.js:20
+[LOW] notifications/Sender:20
   Hardcoded retry count. Environment differences (test vs prod) need different values.
   → Move to configuration.
 
